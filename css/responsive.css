@@ -1,13 +1,13 @@
 @media screen and (min-width: 600px) {
   .image__show{
     width: 80px;
-    height 80px;
+    height: 80px;
   }
 }
 @media screen and (min-width: 800px) {
   .image__show{
     width: 120px;
-    height 120px;
+    height: 120px;
   }
   html, body, header,
   main {
