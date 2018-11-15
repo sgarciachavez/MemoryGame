@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/responsive.css">
+  <link rel="stylesheet" type="text/css" href="css/checkmark.css">
+  <title>Memory Game</title>
+</head>
+
+<body>
+  <header>
+    <h1 class="page__title">Matching Game</h1>
+  </header>
+  <main>
+    <section class="stats">
+      <div id="button_container">
+        <button id="select_deck" class="button select__button">Select your deck</button>
+        <div id="radio_container" class="hide radio__container">
+          <label class="radio__button"><input type="radio" name="deck" value="emoji" checked="checked">Emoji</label>
+          <label class="radio__button"><input type="radio" name="deck" value="fruit">Fruit</label>
+          <label class="radio__button"><input type="radio" name="deck" value="xmas">Christmas</label>
+          <label class="radio__button"><input type="radio" name="deck" value="social">Social media</label>
+        </div>
+
+        <p><span id="stars">&#9734;&#9734;&#9734;</span> <span id="moves_counter"> 0</span> moves. Timer: <span id="timer">00:00</span>
+          <span class="reset__container">
+            <img id="reset_button" src="img/reset.png" alt="reset button" class="reset__button">
+          </span>
+        </p>
+      </div>
+    </section>
+
+    <section id="popup" class="hide popup page__title">
+      <div class="popup__content">
+        <span id="close_window" class="close">&times;</span>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+          <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1" />
+          <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+        </svg>
+        <h2>Congratulations! You Won!</h2>
+        <p>
+          With <span id="moves"></span> moves and <span id="end_stars"></span> stars <br>
+          in <span id="end_time"></span>.
+        </p>
+        <p><span id="encourage"></span></p>
+        <p><button id="play_again" class="button">Play Again!</button></p>
+      </div>
+    </section>
+
+    <section id="container" class="container">
+      <div id="0" class="card"></div>
+      <div id="1" class="card"></div>
+      <div id="2" class="card"></div>
+      <div id="3" class="card"></div>
+      <div id="4" class="card"></div>
+      <div id="5" class="card"></div>
+      <div id="6" class="card"></div>
+      <div id="7" class="card"></div>
+      <div id="8" class="card"></div>
+      <div id="9" class="card"></div>
+      <div id="10" class="card"></div>
+      <div id="11" class="card"></div>
+      <div id="12" class="card"></div>
+      <div id="13" class="card"></div>
+      <div id="14" class="card"></div>
+      <div id="15" class="card"></div>
+    </section>
+  </main>
+
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
