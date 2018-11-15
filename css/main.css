@@ -1,0 +1,181 @@
+span {
+  color: red;
+}
+
+main, header {
+  color: #3c5275;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.page__title {
+  text-align: center;
+}
+
+.stats {
+  margin-left: 3em;
+  margin-right: 3em;
+  font-size: .75em;
+}
+
+.container {
+  background-color: #3c5275;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  grid-gap: .5em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  padding-left: .5em;
+  padding-right: .5em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border-radius: 15px;
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+.radio__container {
+  display: grid;
+}
+
+.radio__button {
+  padding: .25em;
+}
+
+.select__button {
+  width: 10em;
+  margin-bottom: .60em;
+}
+
+.card {
+  background-color: #db7adb;
+  text-align: center;
+  font-size: 1em;
+  padding-top: .5em;
+  cursor: pointer;
+  border-radius: 15px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+@keyframes flip {
+  from {transform: rotateY(180deg);}
+  to {background-color: #db7adb;}
+}
+
+.show__card{
+  animation-name: flip;
+  animation-duration: 2s;
+}
+@keyframes wrong {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+    10% {background-color: red;}
+    30% {transform: rotateY(180deg);}
+}
+
+@keyframes correct {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+  10% {background-color: #00bfff;}
+  30% {background-color: lightgreen;}
+}
+
+.incorrect {
+  animation-name: wrong;
+  animation-duration: 3s;
+}
+
+.correct {
+  animation-name: correct;
+  animation-duration: 1s;
+  background-color: lightgreen;
+}
+
+.hide {
+  display: none;
+}
+
+.popup {
+  position: fixed;  /* Stay in place */
+  z-index: 1;  /* Sit on top */
+  padding-top: 5em;  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup__content {
+  background-color: #fefefe;
+  margin-left: auto;
+  margin-right: auto;
+  padding: .5em;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: red;
+  float: right;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button {
+  background-color: lightgreen;
+  padding: .25em;
+  border-radius: .25em;
+  color: #3c5275;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.image__hide {
+  visibility: hidden;
+}
+
+.image__show {
+  width: 50px;
+  height: 50px;
+}
+
+.reset__button {
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+}
+
+.reset__container {
+  float: right;
+}
