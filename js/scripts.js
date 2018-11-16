@@ -82,8 +82,6 @@ function getRandomPosition(max) {
  * certain conditions are met.  e.g.  The user was won, the id isNaN
  */
 function cardClicked(evt) {
-  console.log(`Event ID = ${evt.target.id} card1 = ${card1} card2 = ${card2}`);
-  console.log(`evt.currentTarget.id = ${evt.currentTarget.id}`);
   //Is timer running?? If not start it!
   if (!timerStarted) {
     restart();
@@ -380,8 +378,7 @@ function getStarValue() {
  * popup window.
  */
 function pause() {
-  waitAmoment++
-  console.log(waitAmoment);
+  waitAmoment++;
   if (waitAmoment === 2) {
     clearTimeout(delay);
     waitAmoment = 0;
