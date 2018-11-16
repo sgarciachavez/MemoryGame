@@ -1,17 +1,42 @@
-//All images found on https://www.iconfinder.com
-let emoji = ["Emoji_0.svg", "Emoji_1.svg", "Emoji_2.svg", "Emoji_3.svg", "Emoji_4.svg", "Emoji_5.svg", "Emoji_6.svg", "Emoji_7.svg",
-            "Emoji_0.svg", "Emoji_1.svg", "Emoji_2.svg", "Emoji_3.svg", "Emoji_4.svg", "Emoji_5.svg", "Emoji_6.svg", "Emoji_7.svg"];
 
-let xmas = ["xmas_0.svg", "xmas_1.svg", "xmas_2.svg", "xmas_3.svg", "xmas_4.svg", "xmas_5.svg", "xmas_6.svg", "xmas_7.svg",
-            "xmas_0.svg", "xmas_1.svg", "xmas_2.svg", "xmas_3.svg", "xmas_4.svg", "xmas_5.svg", "xmas_6.svg", "xmas_7.svg"];
+const themes = ["Emoji", "xmas","fruit", "social_media"];
+let emoji= [];
+let xmas = [];
+let fruit = [];
+let social = [];
 
-let fruit = ["fruit_0.svg", "fruit_1.svg", "fruit_2.svg", "fruit_3.svg", "fruit_4.svg", "fruit_5.svg", "fruit_6.svg", "fruit_7.svg",
-            "fruit_0.svg", "fruit_1.svg", "fruit_2.svg", "fruit_3.svg", "fruit_4.svg", "fruit_5.svg", "fruit_6.svg", "fruit_7.svg"];
+for(theme of themes){
+  for(let i = 0; i < 8; i++){
+    let img = `${theme}_${i}.svg`;
+    switch (theme) {
+      case "fruit":
+        fruit[i] = img;
+        break;
+      case "xmas":
+        xmas[i] = img;
+        break;
+      case "social_media":
+        social[i] = img;
+        break;
+      default:
+        emoji[i] = img;
+    }
+  }
+};
 
-let social = ["social_media_0.svg", "social_media_1.svg", "social_media_2.svg", "social_media_3.svg",
-          "social_media_4.svg", "social_media_5.svg", "social_media_6.svg", "social_media_7.svg",
-          "social_media_0.svg", "social_media_1.svg", "social_media_2.svg", "social_media_3.svg",
-          "social_media_4.svg", "social_media_5.svg", "social_media_6.svg", "social_media_7.svg"];
+//xmas = xmas.concat(xmas); OR use below
+emoji = [...emoji, ... emoji];
+xmas = [...xmas, ...xmas];
+fruit = [...fruit, ...fruit];
+social = [...social, ...social];
+
+// for(let i = 0; i < 16; i++){
+//   console.log(`emoji[${i}] == ${emoji[i]}`);
+//   console.log(`xmas[${i}] == ${xmas[i]}`);
+//   console.log(`fruit[${i}] == ${fruit[i]}`);
+//   console.log(`social[${i}] == ${social[i]}`);
+//   console.log("===========================");
+// }
 
 let cards = shuffle(emoji);
 let card1 = "";
@@ -88,9 +113,6 @@ function cardClicked(evt) {
     timerStarted = true;
     startTimer();
   }
-  //increment the counter and display to the user.
-  moves_counter++;
-  display_counter.textContent = moves_counter;
 
   //What card was clicked?  Get the ID
   let id = parseInt(evt.target.id);
@@ -100,12 +122,13 @@ function cardClicked(evt) {
   }
 
   if (card1 === "") {
-
     card1 = id;
+    updateCounter();
     toggleClass(card1, "show__card"); //Add the class that flips the card
     toggleClass(`img_${card1}`, "image__hide"); //Remove the class that hides the card
   } else if (card2 === "") {
     card2 = id;
+    updateCounter();
     toggleClass(card2, "show__card");
     toggleClass(`img_${card2}`, "image__hide"); //Remove the class that hides the card
   }
@@ -372,6 +395,7 @@ function getStarValue() {
   return starValue;
 }
 
+
 /**
  * @description represents a pause allowing the user to view the cards
  * before they are flippled back down.  Also pauses before displaying the
@@ -390,4 +414,11 @@ function pause() {
   } else {
     delay = setTimeout(pause, 1000);
   }
+}
+
+//Using Arrow Functions!!!!!
+//increment the counter and display to the user.
+const updateCounter = () => {
+  moves_counter++;
+  display_counter.textContent = moves_counter;
 }
