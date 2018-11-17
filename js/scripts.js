@@ -128,7 +128,7 @@ function cardClicked(evt) {
     toggleClass(`img_${card1}`, "image__hide"); //Remove the class that hides the card
   } else if (card2 === "") {
     card2 = id;
-    updateCounter();
+    //updateCounter();
     toggleClass(card2, "show__card");
     toggleClass(`img_${card2}`, "image__hide"); //Remove the class that hides the card
   }
@@ -384,9 +384,9 @@ function getStarValue() {
   let star1 = `☆`;
   let starValue = "";
 
-  if (moves_counter < 31) {
+  if (moves_counter < 11) {
     starValue = star3;
-  } else if (moves_counter < 43) {
+  } else if (moves_counter < 19) {
     starValue = star2;
   } else {
     starValue = star1;
